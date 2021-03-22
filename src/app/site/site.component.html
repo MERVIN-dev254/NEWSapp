@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-sm-9">
+             <h3 class="text-info text-center">HEADLINES</h3> <br>
+
+             <div *ngFor="let article of Articles" class="card" style="width: 90%;">
+                <img src={{article.urlToImage}} >
+                <div class="card-body">
+                  <h5 class="card-title">{{article.source.name}} - {{article.title}}</h5>
+                  <p class="card-text">{{article.description}}</p>
+                  <hr>
+                  <span> <i class="fa fa-thumbs-up" aria-hidden="true"></i>  Like
+                              <i class="fa fa-comments" aria-hidden="true"></i>   Comments  </span>
+
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3">
+            <h4 class="text-success">CHECK OUT MORE NEWS</h4>
+            <a *ngFor="let source of Sources" (click)="searchArticles(source.id)">{{source.name}}</a>
+            <br>
+        </div>
+    </div>
+</div>
